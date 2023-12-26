@@ -5,8 +5,11 @@ const addition = firstNum + secondNum;
 const subtraction = firstNum - secondNum;
 const multiplication = firstNum * secondNum;
 const division = firstNum / secondNum;
+const result = `
+    Addition result: ${addition}
+    Subtraction result: ${subtraction}
+    Multiplication result: ${multiplication}
+    Division result: ${division}
+`;
 
-alert(`Addition result: ${addition}`);
-alert(`Subtraction result: ${subtraction}`);
-alert(`Multiplication result: ${multiplication}`);
-alert(`Division result: ${division}`);
+alert(result);
