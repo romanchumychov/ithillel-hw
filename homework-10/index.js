@@ -26,7 +26,7 @@ for (let i = 1; i <= 15; i++) {
 console.log(`4. Cумa всіх цілих чисел від 1 до 15: ${sumOfWholeNumbers}`);
 
 // 5. Знайти добуток усіх цілих чисел від 15 до 35.
-let productOfAllNumbers = 15;
+let productOfAllNumbers = 1;
 for (let i = 15; i <= 35; i++) {
   productOfAllNumbers = productOfAllNumbers * i;
 }
@@ -59,37 +59,30 @@ for (let i = 100; i <= 200; i++) {
 }
 console.log(`8. Вивести всі числа в діапазоні від 100 до 200 кратні 3: ${arr3.slice("").join(", ")}`);
 
-// Дано натуральне число.
-let n = 12;
 
 // 9. Знайти та вивести на сторінку всі його дільники.
+let n = 12;
 let arr4 = [];
+let quantity = 0;
+let sumOfNaturalNumber = 0;
+
 for (let i = 1; i <= n; i++) {
   if (n % i === 0) {
     arr4.push(i);
+
+    if (i % 2 === 0) {
+      quantity = quantity + 1;
+      sumOfNaturalNumber = sumOfNaturalNumber + i;
+    }
   }
 }
-console.log(`9. Дано натуральне число "${n}". Знайти та вивести на сторінку всі його дільники: ${arr4.slice("").join(", ")}`);
+console.log(`9. Дано "${n}" число. Знайти та вивести на сторінку всі його дільники: ${arr4.slice("").join(", ")}`);
 
 // 10. Визначити кількість його парних дільників.
-let quantity = 0;
-for (let i = 1; i <= n; i++) {
-
-  if (n % i === 0) {
-    quantity = quantity + 1;
-  }
-}
-console.log(`10. Дано натуральне число "${n}". Визначити кількість його парних дільників: ${quantity}`);
+console.log(`10. Визначити кількість його парних дільників: ${quantity}`);
 
 // 11. Знайти суму його парних дільників.
-let sumOfNaturalNumber = 0;
-for (let i = 1; i <= n; i++) {
-
-  if (n % i === 0) {
-    sumOfNaturalNumber = sumOfNaturalNumber + i;
-  }
-}
-console.log(`11. Дано натуральне число "${n}". Знайти суму його парних дільників: ${sumOfNaturalNumber}`);
+console.log(`11. Знайти суму його парних дільників: ${sumOfNaturalNumber}`);
 
 // 12. Надрукувати повну таблицю множення від 1 до 10.
 console.log("12. Надрукувати повну таблицю множення від 1 до 10:");
