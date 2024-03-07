@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Work #29</title>
+    <style>
+        .vote-list {
+            display: flex;
+            user-select: none;
+        }
+        .vote-list__item {
+            display: flex;
+            flex-direction: column;
+            padding: 0 12px;
+            text-align: center;
+            font-size: 44px;
+        }
+        .vote {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>ДЗ 29. Голосування</h1>
+
+    <div class="vote-list">
+       <span class="vote-list__item">
+           <span class="vote">&#128545;</span>
+           <span class="vote-result"></span>
+       </span>
+       <span class="vote-list__item">
+           <span class="vote">&#128533;</span>
+           <span class="vote-result"></span>
+       </span>
+       <span class="vote-list__item">
+           <span class="vote">&#128528;</span>
+           <span class="vote-result"></span>
+       </span>
+       <span class="vote-list__item">
+           <span class="vote">&#128524;</span>
+           <span class="vote-result"></span>
+       </span>
+       <span class="vote-list__item">
+           <span class="vote">&#128512;</span>
+           <span class="vote-result"></span>
+       </span>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
