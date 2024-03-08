@@ -2,7 +2,7 @@
 
 const basicSlider = () => {
   const slider = document.querySelector(".js-slider");
-  const sliderItems = [...slider.querySelectorAll(".js-slider .slider__item")];
+  const sliderItems = [...slider.querySelectorAll(".slider__item")];
   const prev = document.querySelector(".js-slider-prev");
   const next = document.querySelector(".js-slider-next");
   const IS_ACTIVE = "is-active";
