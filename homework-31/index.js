@@ -2,28 +2,23 @@
 
 const basicSlider = () => {
   const slider = document.querySelector(".js-slider");
-  const sliderItems = [...slider.querySelectorAll(".slider__item")];
+  const sliderItems = slider.querySelectorAll(".slider__item");
   const prev = document.querySelector(".js-slider-prev");
   const next = document.querySelector(".js-slider-next");
   const IS_ACTIVE = "is-active";
   let currentSlideIndex = 0;
 
   const handleNavigationState = () => {
-    (currentSlideIndex === 0)
-      ? prev.disabled = true
-      : prev.disabled = false;
-
-    (currentSlideIndex === sliderItems.length - 1)
-      ? next.disabled = true
-      : next.disabled = false;
+    prev.disabled = currentSlideIndex === 0;
+    next.disabled = currentSlideIndex === sliderItems.length - 1;
   };
 
   const displayCurrentSliderItem = () => {
-    const activeSliderItem = slider.querySelector(".slider__item.is-active");
-
-    activeSliderItem.classList.remove(IS_ACTIVE);
+    sliderItems.forEach(item => item.classList.remove(IS_ACTIVE));
     sliderItems[currentSlideIndex].classList.add(IS_ACTIVE);
   };
+
+  handleNavigationState();
 
   next.addEventListener("click", () => {
     currentSlideIndex++;
