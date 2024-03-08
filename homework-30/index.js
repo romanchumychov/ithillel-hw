@@ -35,18 +35,18 @@ const renderListOfCategoryCards = e => {
       `;
   });
 
-  const productCards = Array.from(document.querySelectorAll(".product-card"));
+  const productCards = [...document.querySelectorAll(".product-card")];
 
   productCards.forEach(card => {
-    card.addEventListener("click", (e) => {
-      renderProductInfo(e, target, productCards);
+    card.addEventListener("click", function() {
+      renderProductInfo(this, target, productCards);
     });
   });
 };
 
-const renderProductInfo = (e, target, productCards) => {
-  const productIndex = productCards.indexOf(e.target);
-  const currentProduct = productsList[target.dataset.product].list[productIndex];
+const renderProductInfo = (that, card, productCards) => {
+  const productIndex = productCards.indexOf(that);
+  const currentProduct = productsList[card.dataset.product].list[productIndex];
   const { title, storage, color } = currentProduct;
   const ACTION_BUTTON_ID = "action-btn";
 
