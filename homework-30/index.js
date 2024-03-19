@@ -13,7 +13,7 @@ const hideForm = () => {
   orderForm.classList.remove(VISIBLE);
 };
 
-export const formDataToObject = formData => Object.fromEntries(formData.entries());
+const formDataToObject = formData => Object.fromEntries(formData.entries());
 
 const displayCategories = () => {
   const categoryList = document.querySelector(".category-list");
