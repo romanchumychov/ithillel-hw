@@ -21,6 +21,9 @@
             width: 200px;
             list-style: none;
         }
+        .category-list.is-hidden {
+            display: none;
+        }
         .products-list__item {
             margin-top: -1px;
         }
@@ -113,6 +116,23 @@
         .app-modal #action-btn {
             display: none;
         }
+        #my-orders {
+            width: 200px;
+            background-color: #ff9000;
+            color: white;
+            font-weight: bold;
+        }
+        #my-orders:hover {
+            background-color: #ffa42e;
+        }
+        .orders-list {
+            margin: 0;
+            padding: 0;
+        }
+        .orders-list.is-active {
+            height: 100px;
+            border: 1px solid grey;
+        }
     </style>
 </head>
 <body>
@@ -121,6 +141,8 @@
     <div class="app">
         <div class="app-row">
             <div class="app-column">
+                <button id="my-orders">Мої замовлення</button>
+                <ul id="orders-list" class="orders-list"></ul>
                 <ul class="category-list"></ul>
             </div>
             <div class="app-column" id="product-cards"></div>

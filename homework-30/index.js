@@ -88,8 +88,9 @@ function formAction() {
   orderForm.addEventListener("submit", function(e) {
     e.preventDefault();
     const formData = new FormData(this);
+    console.log("fock")
 
-    showModalInfo(formDataToObject(formData));
+    // showModalInfo(formDataToObject(formData));
   });
 }
 
@@ -98,6 +99,27 @@ function showModalInfo(data) {
   const modalBody = document.getElementsByClassName("app-modal-body")[0];
   const modalClose = document.getElementsByClassName("app-modal__close")[0];
   const productInfo = document.getElementsByClassName("product-information")[0];
+  const lsOrders = window.localStorage.getItem("orders");
+  const lsOrdersParse = JSON.parse(lsOrders);
+  const ordersData = lsOrders ? lsOrdersParse : [];
+
+  if (lsOrders) {
+    ordersData.push(
+      {
+        orderId: lsOrdersParse.length + 1,
+        date: new Date().toLocaleString().split(",")[0]
+      }
+    );
+  } else {
+    ordersData.push(
+      {
+        orderId: 1,
+        date: new Date().toLocaleString().split(",")[0]
+      }
+    );
+  }
+
+  window.localStorage.setItem("orders", JSON.stringify(ordersData));
 
   modalBody.innerHTML = `
     ${productInfo.innerHTML}
@@ -121,6 +143,18 @@ function showModalInfo(data) {
   })
 }
 
+const showMyOrders = () => {
+  const button = document.getElementById("my-orders");
+  const orderList = document.getElementById("orders-list");
+  const categoriesList = document.getElementsByClassName("category-list")[0];
+
+  button.addEventListener("click", function() {
+    orderList.classList.toggle("is-active");
+    categoriesList.classList.toggle("is-hidden");
+  })
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   displayCategories();
+  showMyOrders();
 });
