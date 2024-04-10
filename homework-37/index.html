@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ 37. Promise</title>
+    <style>
+        div {
+            margin-bottom: 6px;
+        }
+        .form-control {
+            min-width: 150px;
+            height: 30px;
+            padding: 4px 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: 1px solid #dfe1e5;
+            outline: none;
+        }
+        .form-control:focus {
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px #d4d4d4;
+        }
+        .comment-item {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #d4d4d4;
+        }
+    </style>
+</head>
+<body>
+    <h1>ДЗ 37. Promise</h1>
+
+    <hr>
+    <br>
+
+    <form id="weather-form">
+        <strong>Enter post ID from 1 to 100:</strong>
+        <input class="form-control" type="number" min="1" max="100" placeholder="eg. 5" required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="post-container"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
