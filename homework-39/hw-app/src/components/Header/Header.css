@@ -1,0 +1,9 @@
+.header {
+    border-bottom: 1px solid gray;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
